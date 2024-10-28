@@ -1,0 +1,230 @@
+body {
+	overflow-y: scroll;
+}
+
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(100, 108, 255, 1);
+}
+
+header {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	width: 100%;
+}
+
+header > div {
+	opacity: 0;
+	transition: opacity;
+	animation: fadeIn 1s forwards;
+	animation-delay: 10s;
+}
+
+header .header-title {
+	font-size: 4rem;
+	margin: 0 auto 0 0;
+	font-family: "Pixelify Sans", sans-serif;
+}
+
+.action-buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 1rem;
+	column-gap: 2rem;
+	width: fit-content;
+	opacity: 0;
+	transition: opacity;
+	animation: fadeIn 1s forwards;
+	animation-delay: 10s;
+}
+
+.action-button {
+	font-size: 1.5rem;
+	border: 1px solid rgba(100, 108, 255, 0.25);
+	padding: 1rem 1rem;
+	text-align: center;
+}
+
+.action-button button {
+	font-size: 1.1rem;
+	padding: 1rem 1.75rem;
+	font-family: "Pixelify Sans", sans-serif;
+}
+
+
+.action-button:hover {
+	background-color: rgba(136, 139, 189, 0.5);
+	color: white;
+}
+
+.action-button p {
+	margin: 0;
+	font-size: 1rem;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.action-button__error {
+	color: red;
+}
+
+.action-button__success {
+	color: lightgreen;
+}
+
+.action-button__pending {
+	color: lightblue;
+}
+
+.instructions {
+	display: flex;
+	align-items: flex-start;
+	justify-items: flex-start;
+	flex-direction: column;
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+}
+
+.instructions .instructions-title {
+	font-family: "Pixelify Sans", sans-serif;
+	font-size: 1.7rem;
+	margin-bottom: 0.5rem;
+}
+
+.instructions .instructions-text {
+	text-align: left;
+	margin: 0;
+	font-family: "M PLUS 1 Code", sans-serif;
+}
+
+.logs-and-nfts {
+	margin-top: 3rem;
+	opacity: 0;
+	transition: opacity;
+	animation: fadeIn 1s forwards;
+	animation-delay: 10s;
+}
+
+.logs {
+	margin-top: 2rem;
+}
+
+.logs-and-nfts h2 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	font-family: "Pixelify Sans", sans-serif;
+}
+
+.logs-window {
+	height: 450px;
+	max-height: 450px;
+	overflow: auto;
+	border: 1px dashed white;
+	padding: 1rem;
+	background: black;
+}
+
+.log {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	gap: 2rem;
+	font-family: "M PLUS 1 Code", sans-serif;
+	height: 35px;
+	max-width: 100%;
+	color: white;
+}
+
+.log:hover {
+	background-color: rgba(100, 108, 255, 0.25);
+}
+
+.log * {
+	margin: 0;
+}
+
+.log__name {
+	font-weight: 600;
+}
+
+.log__time {
+	font-size: 0.85rem;
+	min-width: 180px;
+}
+
+.nft-list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 1rem;
+	row-gap: 1rem;
+}
+
+.nft * {
+	margin: 0;
+}
+
+.nft {
+	border: 1px solid lightblue;
+	padding: 1rem;
+}
+
+.nft.Legendary {
+	border-color: gold;
+}
+
+.nft.Eare {
+	border-color: lightcoral;
+}
+
+.nft__name {
+	text-align: center;
+	font-family: "Pixelify Sans", sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 0.25rem;
+}
+
+.nft img {
+	width: 100%;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	header {
+		flex-direction: column;
+	}
+	
+	.action-buttons {
+		grid-template-columns: 1fr;
+		place-items: center;
+		width: 100%;
+	}
+	
+	.nfts {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.log__time {
+		display: none;
+	}
+	
+	.log__name {
+		font-size: 14px;
+	}
+}
